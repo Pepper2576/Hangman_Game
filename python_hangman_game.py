@@ -1,5 +1,8 @@
-word = 'hangman'
-word_list = list(word)
+import random
+
+word = ["apple", "banana", "orange", "grape", "pear", "house", "chair", "table", "book", "pen", "lamp", "phone", "watch", "radio", "music", "movie", "game", "show", "sport", "food"]
+chosen_word = random.choice(word)
+word_list = list(chosen_word)
 correct_guess = []
 incorrect_guess_list = []
 user_guess_list = []
@@ -24,13 +27,13 @@ while(True):
                 if user_guess == word_list[i]:
                     correct_guess[i] = user_guess
             if correct_guess.count('_') == 0:
-                print(f"You win\nyour word was '{word.upper()}'")
+                print(f"You win\nyour word was '{chosen_word.upper()}'")
                 break
         else:
             lives = lives - 1
             incorrect_guess_list.append(user_guess)
             if lives == 0:
-                print(f"game over\nyour word was '{word.upper()}'")
+                print(f"game over\nyour word was '{chosen_word.upper()}'")
                 break
             else:
                 print(f"nope, {lives} left\nIncorrect guesses {incorrect_guess_list}")
