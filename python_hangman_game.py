@@ -6,7 +6,7 @@ word_list = list(chosen_word)
 correct_guess = []
 incorrect_guess_list = []
 user_guess_list = []
-lives = 6
+lives = 11
 
 
 for i in range(len(word_list)):
@@ -17,6 +17,7 @@ while(True):
     print(f"Your word is {correct_guess}")
 
     user_guess = input("Guess a letter\n").lower()
+
     if user_guess_list.count(user_guess) == 0:
 
         user_guess_list.append(user_guess)
